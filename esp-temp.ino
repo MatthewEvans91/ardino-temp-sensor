@@ -1,12 +1,19 @@
+#include "Arduino.h"
+
+// The setup function is called once at startup of the sketch
 void setup()
 {
-    pinMode(17, OUTPUT);
+    Serial.begin(115200);
+    while (!Serial)
+    {
+    }
+    Serial.println();
+    Serial.println("Starting device for temperature monitor test");
 }
 
 void loop()
 {
-    digitalWrite(17, HIGH);
-    delay(100);
-    digitalWrite(17, LOW);
-    delay(100);
+    Serial.println("Looping");
+    delay(1000);
+    //
 }
